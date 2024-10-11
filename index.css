@@ -1,1 +1,89 @@
+*{
+    margin: 0px;
+}
 
+.menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: #85BDBF;
+}
+
+.menu-logo img {
+    height: 100px;
+    width: 200px;
+    justify-content: center;
+}
+
+.menu-opciones{
+    display: flex;
+}
+
+.menu-usuario img{
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+}
+
+.menu-opciones a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-opciones a:hover{
+    font-size: 25px;
+    color:black;
+    text-decoration: none;
+}
+
+/* PAGINA PRINCIPAL*/
+
+
+.imagen-principal img {
+    border: 2px solid black;
+    height: 350px;
+    margin-top: 90px;
+    margin-left: 150px;
+}
+
+/*INCIAR SESION Y REGISTRARSE*/
+
+.contenedor1-usuario{
+    background-color: cadetblue;
+    width: 450px;
+    height: 300px;
+    margin-top: 150px;
+    border-radius: 10px;
+    margin-left: 450px;
+}
+
+.contenedor1-usuario h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contenedor1-usuario label{
+    padding:30px;
+}
+
+.contenedor1-usuario input{
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.contenedor1-usuario button{
+     background-color: #85BDBF;
+     border-radius: 4px;
+     height: 25px;
+     width: 100px;
+     transition: 0.3s;
+}
+
+.contenedor1-usuario button:hover{
+    height: 30px;
+    width: 105px;
+}
