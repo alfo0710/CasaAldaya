@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reseñas</title>
+    <title>Página de Reseñas</title>
     <link rel="stylesheet" href="index.css">
 
     <section class="menu">
@@ -26,7 +26,41 @@
     </section>
 
 </head>
+
 <body>
+
+    <div class="Reseñas">
+
+    <h1>Reseñas de Usuarios</h1>
+
+        <div class="ingresarReseñas">
+            <h2>Deja tu reseña</h2>
+            <form id="reviewForm" class="ingresarReseñas2">
+                
+                <div>
+                <label for="username">Nombre:</label>
+                <input type="text" id="username" required>
+                </div>
+
+                <div>
+                <label for="reviewText">Tu reseña:</label>
+                <textarea id="reviewText" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Reseña</button>
+
+            </form>
+        </div>
+
+<br><br><br><br>
+
+        <div class="reseñasListas">
+            <h2>Reseñas Publicadas</h2>
+            <ul id="reviews"></ul>
+        </div>
+    </div>
     
+
+    <script src="script.js"></script>
 </body>
 </html>
