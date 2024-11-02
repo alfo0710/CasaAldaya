@@ -1,0 +1,22 @@
+
+.pieDePagina{
+    background-color:#85BDBF;
+    align-items: center;
+}
+
+.redesSociales{
+    display: inline-block;
+    margin-left:460px;
+}
+
+.redesSociales img{
+    height: 50px;
+    margin: 25px;
+    margin-top: 40px;
+}
+
+.direccion p{
+    color:black;
+    margin-left: 530px;
+    padding-bottom: 40px;
+}

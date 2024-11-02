@@ -1,46 +1,56 @@
-// RESEÑAS
+// Registro de usuario
+document.getElementById('register-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-// Función para cargar reseñas guardadas en localStorage
-function loadReviews() {
-    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    const reviewsList = document.getElementById('reviews');
-    reviewsList.innerHTML = ''; // Limpiar la lista antes de cargar
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const gender = document.getElementById('gender').value;
 
-    reviews.forEach(function(review) {
-        const reviewItem = document.createElement('li');
-        reviewItem.classList.add('review-item');
-        reviewItem.innerHTML = `<strong>${review.username}</strong>: ${review.text}`;
-        reviewsList.appendChild(reviewItem);
-    });
+    const user = {
+        firstName,
+        lastName,
+        email,
+        password,
+        gender
+    };
+
+    localStorage.setItem(email, JSON.stringify(user));
+    alert('Usuario registrado exitosamente. Ahora puedes iniciar sesión.');
+    window.location.href = 'iniciarSesion.html';
+});
+
+// Inicio de sesión
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    const userData = JSON.parse(localStorage.getItem(email));
+
+    if (userData && userData.password === password) {
+        alert(`Bienvenido, ${userData.firstName}!`);
+        // Almacenar nombre de usuario en sesión (o localStorage)
+        localStorage.setItem('loggedInUser', userData.firstName);
+        window.location.href = 'welcome.html'; // Redirigir a una página de bienvenida o dashboard
+    } else {
+        alert('Correo o contraseña incorrectos. Inténtalo de nuevo.');
+    }
+});
+
+// Menú de navegación con nombre de usuario
+window.onload = function() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        const menu = document.querySelector('.menu');
+        menu.innerHTML += `<div class="menu-usuario">Hola, ${loggedInUser} <a href="#" id="logout">Cerrar Sesión</a></div>`;
+        
+        // Cerrar sesión
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('loggedInUser');
+            window.location.reload(); // Recargar la página
+        });
+    }
 }
-
-// Función para agregar nueva reseña
-function addReview(event) {
-    event.preventDefault();
-
-    // Obtener valores del formulario
-    const username = document.getElementById('username').value;
-    const reviewText = document.getElementById('reviewText').value;
-
-    // Obtener reseñas existentes en localStorage
-    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-
-    // Agregar la nueva reseña al array
-    reviews.push({ username: username, text: reviewText });
-
-    // Guardar el array actualizado en localStorage
-    localStorage.setItem('reviews', JSON.stringify(reviews));
-
-    // Volver a cargar las reseñas para que aparezca la nueva
-    loadReviews();
-
-    // Limpiar los campos del formulario
-    document.getElementById('username').value = '';
-    document.getElementById('reviewText').value = '';
-}
-
-// Agregar evento al formulario para enviar reseña
-document.getElementById('reviewForm').addEventListener('submit', addReview);
-
-// Cargar reseñas al cargar la página
-window.onload = loadReviews;
