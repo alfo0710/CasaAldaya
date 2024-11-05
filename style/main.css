@@ -1,11 +1,11 @@
-@import url("footer.css");
+@import url("/style/footer.css");
 
-@import url("header.css");
+@import url("/style/header.css");
 
-@import url("historia.css");
+@import url("/style/historia.css");
 
-@import url("productos.css");
+@import url("/style/productos.css");
 
-@import url("slogan.css");
+@import url("/style/slogan.css");
 
 
