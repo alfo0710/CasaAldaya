@@ -1,0 +1,64 @@
+.contenedorTotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-image: url(https://png.pngtree.com/png-clipart/20240430/original/pngtree-pure-white-paper-textured-transparent-background-overlay-png-image_14980863.png);
+}
+
+.auth-section {
+    width: 80%;
+    max-width: 400px;
+    background-color: #85BDBF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.auth-section h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4f9a9b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3c7b7d;
+}
+
+.contenedorTotal p {
+    text-align: center;
+    color: #ffffff;
+}
+
+.contenedorTotal a {
+    color: #ffffff;
+    text-decoration: underline;
+}

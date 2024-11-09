@@ -5,28 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
     <title>Iniciar Sesión</title>
+
+
+    <section class="menu">
+
+        <div class="menu-logo">
+            <img src="img/CasaAldayaLogo.png" alt="">
+        </div>
+    
+        <div class="menu-opciones">
+            <a id="texto-opciones" href="index.html">Inicio</a>
+            <a id="texto-opciones" href="historiaEmpresa.html">Historia</a>
+            <a id="texto-opciones" href="reseñasClientes.html">Reseñas</a>
+            <a id="texto-opciones" href="productos.html ">Productos</a>
+         
+            <div class="menu-usuario">
+                <a href="usuario.html"><img src="img/usuario.png" alt="usuario"></a>
+                <div class="dropdown">
+                    <a href="registrarse.html">Registrarse</a>
+                    <a href="iniciarSesion.html">Iniciar Sesión</a>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
 </head>
 <body>
-    <header class="menu">
-        <div class="menu-logo">
-            <h1>Iniciar Sesión</h1>
-        </div>
-    </header>
-    <main>
-        <form id="login-form">
-            <label for="login-email">Correo electrónico:</label>
-            <input type="email" id="login-email" required>
 
-            <label for="login-password">Contraseña:</label>
-            <input type="password" id="login-password" required>
+    <div class="contenedorTotal">
+    <div class="auth-section">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <label for="username">email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
 
             <button type="submit">Iniciar Sesión</button>
         </form>
-    </main>
-    <footer class="pieDePagina">
-        <p>&copy; 2024 Mi Aplicación</p>
-    </footer>
 
-    <script src="script.js"></script>
+        <p>¿No tienes una cuenta? <a href="registrarse.html">Regístrate aquí</a></p>
+    </div>
+
+</div>
+
+    <script src="login.js"></script>
+
 </body>
 </html>
