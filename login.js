@@ -1,20 +1,38 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío del formulario
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // Obtener los datos del formulario
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    // Recuperar el usuario registrado desde localStorage
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-
-    // Verificar si el correo y la contraseña coinciden
     if (storedUser && storedUser.email === email && storedUser.password === password) {
-        // Si coinciden, iniciar sesión correctamente
-        alert('Inicio de sesión exitoso');
-        window.location.href = 'index.html'; // Redirigir al inicio
+        localStorage.setItem("isLoggedIn", "true");  // Marca el usuario como logueado
+        window.location.href = "index.html";  // Redirige a la página principal
     } else {
-        // Si no coinciden, mostrar un mensaje de error
-        alert('Correo electrónico o contraseña incorrectos');
+        alert("Correo o contraseña incorrectos.");
     }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const iconoUsuario = document.getElementById("iconoUsuario");
+    const menuOpciones = document.getElementById("menuOpciones");
+
+    iconoUsuario.addEventListener("click", function() {
+        // Mostrar u ocultar el menú desplegable
+        if (menuOpciones.style.display === "none" || menuOpciones.style.display === "") {
+            menuOpciones.style.display = "block";
+        } else {
+            menuOpciones.style.display = "none";
+        }
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    window.addEventListener("click", function(event) {
+        if (!iconoUsuario.contains(event.target) && !menuOpciones.contains(event.target)) {
+            menuOpciones.style.display = "none";
+        }
+    });
 });

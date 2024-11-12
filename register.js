@@ -1,26 +1,45 @@
-document.getElementById('registerForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío del formulario
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    const password = document.getElementById("newPassword").value;
+    const genero = document.getElementById("genero").value;
 
-    // Obtener los datos del formulario
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
-    const newPassword = document.getElementById('newPassword').value;
-
-    // Crear un objeto con los datos del usuario
     const user = {
         nombre: nombre,
         email: email,
         fechaNacimiento: fechaNacimiento,
-        password: newPassword
+        password: password,
+        genero: genero
     };
 
-    // Guardar el objeto en localStorage
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("isLoggedIn", "true");  // Marca el usuario como logueado
+    window.location.href = "index.html";  // Redirige a la página principal
+});
 
-    // Confirmar que el registro fue exitoso
-    alert('Usuario registrado con éxito');
-    
-    // Redirigir a la página de inicio de sesión
-    window.location.href = 'iniciarSesion.html';
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const iconoUsuario = document.getElementById("iconoUsuario");
+    const menuOpciones = document.getElementById("menuOpciones");
+
+    iconoUsuario.addEventListener("click", function() {
+        // Mostrar u ocultar el menú desplegable
+        if (menuOpciones.style.display === "none" || menuOpciones.style.display === "") {
+            menuOpciones.style.display = "block";
+        } else {
+            menuOpciones.style.display = "none";
+        }
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    window.addEventListener("click", function(event) {
+        if (!iconoUsuario.contains(event.target) && !menuOpciones.contains(event.target)) {
+            menuOpciones.style.display = "none";
+        }
+    });
 });

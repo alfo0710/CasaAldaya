@@ -1,22 +1,50 @@
-
-.pieDePagina{
-    background-color:#85BDBF;
-    align-items: center;
+/* Pie de Página */
+.pieDePagina {
+    background-color: #85bdbf;
+    padding:40px;   
+    text-align: center;
 }
 
-.redesSociales{
-    display: inline-block;
-    margin-left:460px;
+.redesSociales {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
 }
 
-.redesSociales img{
+.redesSociales img {
     height: 50px;
-    margin: 25px;
-    margin-top: 40px;
 }
 
-.direccion p{
-    color:black;
-    margin-left: 530px;
-    padding-bottom: 40px;
+.direccion p {
+    color: black;
+}
+
+/* Responsive for mobile devices */
+@media (max-width: 480px) {
+    .pieDePagina {
+        padding: 15px;
+    }
+
+    .redesSociales img {
+        height: 35px;
+    }
+
+    .direccion p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive for large screens */
+@media (min-width: 1368px) {
+    .pieDePagina {
+        padding:45px;
+    }
+
+    .redesSociales img {
+        height: 60px;
+    }
+
+    .direccion p {
+        font-size: 1.1rem;
+    }
 }

@@ -1,83 +1,75 @@
-.menu{
+.menu {
     display: flex;
     justify-content: space-between;
-    background-color: #85BDBF;
-    position: fixed;  
-    width: 1330px;
-    border-radius: 10px;
+    align-items: center;
+    background-color: #85bdbf;
+    position: fixed;
+    width: 99%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 
 .menu-logo img {
     height: 100px;
-    width: 200px;
-    justify-content: center;
-}
-
-.menu-opciones{
-    display: flex;
 }
 
 .menu-opciones {
     display: flex;
-    align-items: center; /* Centra verticalmente */
+    align-items: center;
+    gap: 20px;
 }
 
-#texto-opciones{
+#texto-opciones {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 20px;
-    transition: 0.2s;
-    padding-left: 20px;
-    padding-right: 20px;
+    transition: color 0.2s, border-bottom 0.2s;
 }
-    
+
 #texto-opciones:hover {
     color: black;
-    text-decoration: none;
-    border-bottom: 2px solid black; /* Línea visible al pasar el cursor */
-    padding-bottom: 1px; /* Ajuste final para acercar la línea */
-}
-
-
-.menu-usuario img{
-    height: 60px;
-    width: 60px;
-    margin: 25px;
-}
-
-.menu-usuario {
-    position: relative; /* Para posicionar el dropdown correctamente */
-    display: inline-block; 
+    border-bottom: 2px solid black;
+    padding-bottom: 1px;
 }
 
 .menu-usuario img {
-    width: 50px; 
-    height: auto; /* Mantener la proporción de la imagen */
+    height: 50px;
+    cursor: pointer;
+    padding-right: 10px;
 }
 
-.dropdown {
-    display: none; /* Ocultar el dropdown por defecto */
-    position: absolute; /* Posicionar el dropdown respecto al contenedor padre */
-    background-color: #f9f9f9; 
-    min-width: 150px; /* Ancho mínimo del dropdown */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 1; /* Asegurar que esté por encima de otros elementos */
+/* Responsive para dispositivos mobiles */
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-opciones {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #texto-opciones {
+        font-size: 16px;
+    }
 }
 
-.dropdown a {
-    color: black;
-    padding: 12px;
-    text-decoration: none;
-    display: block; /* Mostrar el enlace como un bloque */
-    font-size: 17px;
-}
+/* Responsive for large screens */
+@media (min-width: 1368px) {
+    .menu {
+        padding: 20px;
+    }
 
-.dropdown a:hover {
-    background-color: #cfcfcf; 
-}
+    .menu-logo img {
+        height: 150px;
+    }
 
-/* Mostrar el dropdown al pasar el mouse sobre el contenedor padre */
-.menu-usuario:hover .dropdown {
-    display: block;
-}
+    .menu-opciones {
+        gap: 40px;
+    }
 
+    #texto-opciones {
+        font-size: 22px;
+    }
+}

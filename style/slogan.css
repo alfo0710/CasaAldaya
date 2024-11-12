@@ -1,19 +1,50 @@
-.slogan{
-    padding-top:170px;
-    padding-bottom:110px ;
+.slogan {
+    padding-top: 150px;
+    padding-bottom: 80px;
     display: flex;
-    background-image: url(https://png.pngtree.com/png-clipart/20240430/original/pngtree-pure-white-paper-textured-transparent-background-overlay-png-image_14980863.png);
+    align-items: center;
+   text-align: center;
 }
 
-.slogan img{
+.slogan img {
     height: 350px;
-    width: auto;
 }
 
-.slogan p{
-    font-size: 40px;
+.slogan p {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 15px;
-}   
+    font-size: 45px;
+}
+
+@media (max-width: 480px) {
+    .slogan {
+        flex-direction: column;
+        background-image: none;
+    }
+    
+    .slogan img {
+        margin-top: 150px;
+        height: 150px;
+    }
+    
+    .slogan p {
+        font-size: 30px;
+    }
+}
+
+/* Responsive for large screens */
+@media (min-width: 1368px) {
+    .slogan {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+
+    .slogan img {
+        height: 400px;
+    }
+
+    .slogan p {
+        font-size: 50px;
+    }
+}

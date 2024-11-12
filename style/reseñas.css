@@ -1,0 +1,121 @@
+
+
+.review-container {
+    background-color: #85b28f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(45% - 10px);
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #4e7c5b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a5e44;
+}
+
+#reviewListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.review-item {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 10px;
+}
+
+.review-item h3 {
+    margin: 0 0 5px;
+    font-size: 1.1em;
+    color: #4e7c5b;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star-rating input[type="radio"]:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffca28;
+}
+
+.stars {
+    color: #ffca28;
+    font-size: 1.3em;
+    margin-top: 5px;
+}
+#reviewListContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to a new line when reaching the screen edge */
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 10px; /* Space between each review item */
+    padding: 10px;
+}
+
+.review-item {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(33.333% - 20px); /* Set each item to one-third width with a gap adjustment */
+    min-width: 300px; /* Minimum width to maintain readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.review-item h3 {
+    margin: 0 0 5px;
+    font-size: 1.1em;
+    color: #4e7c5b;
+}
+
+@media (max-width: 600px) {
+    .review-item {
+        width: 100%; /* For smaller screens, each item takes the full width */
+    }
+}

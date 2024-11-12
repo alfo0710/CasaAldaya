@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="style/main.css">
-    <title>Usuario</title>
 
 
     <section class="menu">
-
         <div class="menu-logo">
+    
             <img src="img/CasaAldayaLogo.png" alt="">
         </div>
     
         <div class="menu-opciones">
             <a id="texto-opciones" href="index.html">Inicio</a>
+            <a id="texto-opciones" href="productos.html">Productos</a>
             <a id="texto-opciones" href="historiaEmpresa.html">Historia</a>
             <a id="texto-opciones" href="reseñasClientes.html">Reseñas</a>
-            <a id="texto-opciones" href="productos.html ">Productos</a>
-         
-            <div class="menu-usuario">
-                <a href="perfil.html"><img src="img/usuario.png" alt="usuario"></a>
-                <div class="dropdown">
-                    <a href="registrarse.html">Registrarse</a>
-                    <a href="iniciarSesion.html">Iniciar Sesión</a>
-                </div>
-            </div>
-    
         </div>
     </section>
 
 </head>
 <body>
-    <script src="script.js"></script>
+
+
+    <br><br><br><br><br><br><br>
+
+    <h1>Usuario</h1>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Correo Electrónico:</strong> <span id="correo"></span></p>
+    <p><strong>Fecha de Nacimiento:</strong> <span id="fechaNacimiento"></span></p>
+    <p><strong>Género:</strong> <span id="genero"></span></p>
+    <input type="file" id="fileUpload">
+    <button id="logoutBtn">Cerrar Sesión</button>
+    
+    <script src="perfil.js"></script>
 </body>
 </html>

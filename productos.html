@@ -8,43 +8,134 @@
 
     <section class="menu">
         <div class="menu-logo">
-    
-            <img src="img/CasaAldayaLogo.png" alt="">
+            <img src="img/CasaAldayaLogo.png" alt="Casa Aldaya Logo">
         </div>
     
         <div class="menu-opciones">
             <a id="texto-opciones" href="index.html">Inicio</a>
             <a id="texto-opciones" href="historiaEmpresa.html">Historia</a>
             <a id="texto-opciones" href="reseñasClientes.html">Reseñas</a>
-         
+    
+            <!-- Menú de usuario con icono y nombre (si está logueado) -->
             <div class="menu-usuario">
-                <a href="usuario.html"><img src="img/usuario.png" alt="usuario"></a>
-                <div class="dropdown">
-                    <a href="registrarse.html">Registrarse</a>
-                    <a href="iniciarSesion.html">Iniciar Sesión</a>
+                <span id="nombreUsuario"></span> <!-- Nombre del usuario se mostrará aquí si está logueado -->
+                <img src="img/usuario.png" alt="Usuario" id="iconoUsuario" style="cursor: pointer;">
+                
+                <!-- Menú desplegable -->
+                <div class="dropdown-menu" id="menuOpciones" style="display: none;">
+                    <!-- Opciones se cargarán dinámicamente con JavaScript -->
                 </div>
             </div>
-    
         </div>
     </section>
 
 </head>
 
 <body>
-  
-    <footer class="pieDePagina">
 
+    <div class="contenedorCategoriasProductos">
+
+        <h1>CATEGORIAS</h1>
+
+        <p>Aquí encontrarás una selección de productos organizados en categorías para que puedas explorar fácilmente todo lo que tenemos para ofrecer. Desde alimentos y bebidas hasta artículos de limpieza, cada categoría está diseñada para ayudarte a encontrar rápidamente lo que necesitas. Haz clic en cada sección para descubrir productos esenciales, de calidad, y a precios accesibles, con la comodidad de una navegación intuitiva y organizada. ¡Esperamos que disfrutes de tu experiencia de compra con nosotros!</p>
+
+        <div class="categoriasProductos">
+            <div class="categoriaLimpieza">
+               <b><a href="#Alimentos">Alimentos</a></b>
+            </div>
+            <div class="categoriaAlimentos">
+                  <b><a href="#Higiene">Higiene</a></b>
+            </div>
+            <div class="categoriaHigiene">
+            <b><a href="#Limpieza">Limpieza</a></b>
+            </div>
+            <div class="categoriaBebida">
+            <b><a href="#Lacteos">Lacteos</a></b>
+            </div>
+        </div>
+    </div>
+
+    <div id="Alimentos"class="productosContenedores">
+        <h1 >Alimentos</h1>
+        <div class="productos">
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9IGcXN6GIYVrwegO_2z2EhXs8xtDdzxEmIQ&s" alt="Producto 1">
+                <h3>Pasta Seca Blue Patna</h3>
+                <p>$ 128,00</p>
+            </div>
+
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI5zQ7AFkfuSLd1F55AWixKLSL_pD1a-Gb3A&s" alt="Producto 2">
+                <h3>Lata Arvejas Revelación</h3>
+                <p>$ 56,00</p>
+            </div>
+
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUT6z_utDay7zUF6IzP4K-CBWcAu9ZriMO0A&s" alt="Producto3">
+                <h3>Cañuelas Harina 0000 Cañuelas</h3>
+                <p>$ 60,00</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="higiene" class="productosContenedores">
+        <h1>Higiene</h1>
+        <div class="productos">
+            <div class="producto">
+                <img src="img/producto1.jpg" alt="Producto Alimento 1">
+                <h3>Producto Alimento 1</h3>
+                <p>Descripción del producto de alimentos.</p>
+            </div>
+            
+            <div class="producto">
+                <img src="img/producto1.jpg" alt="Producto Alimento 2">
+                <h3>Producto Alimento 2</h3>
+                <p>Descripción del producto de alimentos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Limpieza" class="productosContenedores">
+        <h1>Productos de Limpieza</h1>
+        <div class="productos" >
+            <div class="producto">
+                <img src="img/producto3.jpg" alt="Producto 1">
+                <h3>Blem Limpia Multisuperficies</h3>
+                <p>$ 235,00</p>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="productosContenedores">
+        <h1>Productos de Limpieza</h1>
+        <div class="productos" id="productos-bebidas">
+            <div class="producto">
+                <img src="img/producto1.jpg" alt="Producto Bebida 1">
+                <h3>Producto Bebida 1</h3>
+                <p>$ 50,00
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pieDePagina">
         <div class="redesSociales">
-        <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="instagram"></a> 
-        <a href="tel:+47223585"><img src="img/telefono.png" alt="telefono"></a> 
-        <a href="mailto:CasaAldaya@gmail.com"><img src="img/email.png" alt="email"></a> 
-        <a href="tel:+598098833987"><img src="img/whatsapp.png" alt="whatsapp"></a> 
+            <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="Instagram"></a> 
+            <a href="tel:+47223585"><img src="img/telefono.png" alt="Teléfono"></a> 
+            <a href="mailto:CasaAldaya@gmail.com"><img src="img/email.png" alt="Email"></a> 
+            <a href="tel:+598098833987"><img src="img/whatsapp.png" alt="Whatsapp"></a> 
         </div>
 
         <div class="direccion">
-        <p>Av. San Martin 300 ▪️ Paysandú ▪️ Uruguay</p>
+            <p>Av. San Martin 300 ▪️ Paysandú ▪️ Uruguay</p>
         </div>
-
     </footer>
+
+    <script src="productos.js"></script>
+
 </body>
 </html>

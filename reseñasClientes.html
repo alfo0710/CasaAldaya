@@ -8,31 +8,57 @@
 
     <section class="menu">
         <div class="menu-logo">
-    
-            <img src="img/CasaAldayaLogo.png" alt="">
+            <img src="img/CasaAldayaLogo.png" alt="Casa Aldaya Logo">
         </div>
     
         <div class="menu-opciones">
             <a id="texto-opciones" href="index.html">Inicio</a>
             <a id="texto-opciones" href="productos.html">Productos</a>
             <a id="texto-opciones" href="historiaEmpresa.html">Historia</a>
-         
+    
+            <!-- Menú de usuario con icono y nombre (si está logueado) -->
             <div class="menu-usuario">
-                <a href="usuario.html"><img src="img/usuario.png" alt="usuario"></a>
-                <div class="dropdown">
-                    <a href="registrarse.html">Registrarse</a>
-                    <a href="iniciarSesion.html">Iniciar Sesión</a>
+                <span id="nombreUsuario"></span> <!-- Nombre del usuario se mostrará aquí si está logueado -->
+                <img src="img/usuario.png" alt="Usuario" id="iconoUsuario" style="cursor: pointer;">
+                
+                <!-- Menú desplegable -->
+                <div class="dropdown-menu" id="menuOpciones" style="display: none;">
+                    <!-- Opciones se cargarán dinámicamente con JavaScript -->
                 </div>
             </div>
-    
         </div>
     </section>
 
 </head>
 
 <body>
+
+    <br>
+    <br><br><br><br><br><br><br>
+    <br>
     
-    <script src="script.js"></script>
+    <div class="review-container">
+        <h1>Reseñas</h1>
+        <form id="reviewForm">
+            <input type="text" id="nameInput" placeholder="Tu nombre" required>
+            <input type="text" id="reviewInput" placeholder="Escribe tu reseña" required>
+            
+            <div class="star-rating">
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5">&#9733;</label>
+                <input type="radio" name="rating" id="star4" value="4"><label for="star4">&#9733;</label>
+                <input type="radio" name="rating" id="star3" value="3"><label for="star3">&#9733;</label>
+                <input type="radio" name="rating" id="star2" value="2"><label for="star2">&#9733;</label>
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1">&#9733;</label>
+            </div>
+
+            <button type="submit">Añadir Reseña</button>
+        </form>
+
+    </div>
+    <div id="reviewListContainer">
+        <div id="reviewList"></div>
+    </div>
+    <script src="reseñas.js"></script>
 
 </body>
 </html>

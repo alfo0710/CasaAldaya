@@ -8,8 +8,7 @@
 
     <section class="menu">
         <div class="menu-logo">
-    
-            <img src="img/CasaAldayaLogo.png" alt="">
+            <img src="img/CasaAldayaLogo.png" alt="Casa Aldaya Logo">
         </div>
     
         <div class="menu-opciones">
@@ -17,22 +16,57 @@
             <a id="texto-opciones" href="index.html">Inicio</a>
             <a id="texto-opciones" href="productos.html">Productos</a>
             <a id="texto-opciones" href="reseñasClientes.html">Reseñas</a>
-         
+    
+            <!-- Menú de usuario con icono y nombre (si está logueado) -->
             <div class="menu-usuario">
-                <a href="usuario.html"><img src="img/usuario.png" alt="usuario"></a>
-                <div class="dropdown">
-                    <a href="registrarse.html">Registrarse</a>
-                    <a href="iniciarSesion.html">Iniciar Sesión</a>
+                <span id="nombreUsuario"></span> <!-- Nombre del usuario se mostrará aquí si está logueado -->
+                <img src="img/usuario.png" alt="Usuario" id="iconoUsuario" style="cursor: pointer;">
+                
+                <!-- Menú desplegable -->
+                <div class="dropdown-menu" id="menuOpciones" style="display: none;">
+                    <!-- Opciones se cargarán dinámicamente con JavaScript -->
                 </div>
             </div>
-    
         </div>
     </section>
 
 
 </head>
 <body>
+
+
     
+     <div class="contenedorHistoria">
+    <img src="https://i.ytimg.com/vi/XyiAC3BxfHI/maxresdefault.jpg" alt="Imagen del comercio" >
+    <div>
+    <h1>Año 1980</h1>
+    <p>En este comercio, comenzamos con un sueño y un pequeño espacio. Con el tiempo, y gracias al apoyo de nuestros clientes, hemos crecido hasta convertirnos en un referente en la industria. Aquí te contamos nuestra historia... </p>
+    </div>    
+    </div>
+
+    <div class="contenedorHistoria">
+    <div>
+    <h1>Año 1990</h1>
+    <p>En este comercio, comenzamos con un sueño y un pequeño espacio. Con el tiempo, y gracias al apoyo de nuestros clientes, hemos crecido hasta convertirnos en un referente en la industria. Aquí te contamos nuestra historia... </p>
+    </div>
+    <img src="https://i.ytimg.com/vi/XyiAC3BxfHI/maxresdefault.jpg" alt="Imagen del comercio" >
+    </div>
+
+    <div class="contenedorHistoria">
+        <img src="https://i.ytimg.com/vi/XyiAC3BxfHI/maxresdefault.jpg" alt="Imagen del comercio" >
+        <div>
+        <h1>Año 1980</h1>
+        <p>En este comercio, comenzamos con un sueño y un pequeño espacio. Con el tiempo, y gracias al apoyo de nuestros clientes, hemos crecido hasta convertirnos en un referente en la industria. Aquí te contamos nuestra historia... </p>
+        </div>    
+        </div>
+    
+        <div class="contenedorHistoria">
+        <div>
+        <h1>Año 1990</h1>
+        <p>En este comercio, comenzamos con un sueño y un pequeño espacio. Con el tiempo, y gracias al apoyo de nuestros clientes, hemos crecido hasta convertirnos en un referente en la industria. Aquí te contamos nuestra historia... </p>
+        </div>
+        <img src="https://i.ytimg.com/vi/XyiAC3BxfHI/maxresdefault.jpg" alt="Imagen del comercio" >
+        </div>
 
 
     <footer class="pieDePagina">
@@ -50,5 +84,9 @@
 
     </footer>
 
+    <script src="historia.js"></script>
+
+
 </body>
+
 </html>
