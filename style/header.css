@@ -39,7 +39,6 @@
     padding-right: 10px;
 }
 
-/* Responsive para dispositivos mobiles */
 @media (max-width: 480px) {
     .menu {
         flex-direction: column;
@@ -71,5 +70,16 @@
 
     #texto-opciones {
         font-size: 22px;
+    }
+}
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu-opciones {
+        flex-direction: column;
+        gap: 10px;
     }
 }

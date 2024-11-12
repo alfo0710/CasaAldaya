@@ -1,7 +1,8 @@
-/* Pie de Página */
 .pieDePagina {
     background-color: #85bdbf;
-    padding:40px;   
+    padding:40px; 
+    padding-top: 40px;
+    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -17,6 +18,7 @@
 
 .direccion p {
     color: black;
+
 }
 
 /* Responsive for mobile devices */
@@ -46,5 +48,36 @@
 
     .direccion p {
         font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .pieDePagina {
+        padding: 15px;
+    }
+
+    .redesSociales img {
+        height: 35px;
+    }
+
+    .direccion p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .pieDePagina {
+        padding: 20px;
+    }
+
+    .redesSociales img {
+        height: 50px;
+    }
+
+    .direccion p {
+        font-size: 1rem;
     }
 }
