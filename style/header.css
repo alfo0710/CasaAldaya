@@ -5,9 +5,6 @@
     background-color: #85bdbf;
     position: fixed;
     width: 99%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
 }
 
 .menu-logo img {
@@ -40,13 +37,16 @@
 }
 
 @media (max-width: 480px) {
+
+    .menu-logo img{
+        height: 80px;
+    }
     .menu {
-        flex-direction: column;
+        max-width: 96.5%;
     }
 
     .menu-opciones {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
     }
     
     #texto-opciones {
@@ -54,32 +54,20 @@
     }
 }
 
-/* Responsive for large screens */
 @media (min-width: 1368px) {
     .menu {
-        padding: 20px;
+        padding: 8px;
     }
 
     .menu-logo img {
-        height: 150px;
-    }
-
-    .menu-opciones {
-        gap: 40px;
+        height: 100px;
     }
 
     #texto-opciones {
         font-size: 22px;
     }
-}
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        padding: 10px;
-    }
 
-    .menu-opciones {
-        flex-direction: column;
-        gap: 10px;
+    .menu-usuario img{
+        padding-right: 20px;
     }
 }
