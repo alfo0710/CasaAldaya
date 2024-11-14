@@ -40,6 +40,28 @@
     box-shadow: 0px 4px 8px rgba(2, 118, 110, 0.3);
     text-decoration: none;
     transition: 0.3s;
-    background-color: #ddd;
+    background-color: #f0f0f0;
 }
 
+.categoriaLimpieza:hover , .categoriaAlimentos:hover , .categoriaHigiene:hover , .categoriaBebida:hover {
+    width: 180px;
+    height: 180px;
+    background-color: #dcdcdc;
+}
+
+
+@media (max-width: 480px) {
+
+    .contenedorCategoriasProductos p{
+        display: flex;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+ 
+    .categoriaLimpieza, .categoriaAlimentos, .categoriaHigiene, .categoriaBebida {
+        width: 160px;
+        height: 160px;
+       margin-bottom: 20px;
+    }
+}
