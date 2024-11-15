@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120vh;
+    height: 130vh;
     background-image: url(https://png.pngtree.com/png-clipart/20240430/original/pngtree-pure-white-paper-textured-transparent-background-overlay-png-image_14980863.png);
 }
 
-.auth-section {
+.auth-section-register {
     width: 80%;
     max-width: 400px;
     background-color: #85BDBF;
@@ -16,7 +16,22 @@
     color: #ffffff;
 }
 
-.auth-section h1 {
+.auth-section-login {
+    width: 80%;
+    max-width: 400px;
+    background-color: #85BDBF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.auth-section-login h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.auth-section-register h1 {
     text-align: center;
     color: #ffffff;
 }
@@ -31,7 +46,7 @@ label {
     font-weight: bold;
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+input[type="text"], input[type="email"], input[type="password"], select{
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -61,4 +76,12 @@ button:hover {
 .contenedorTotal a {
     color: #ffffff;
     text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+
+    .auth-section-register {
+        margin-top: 280px;
+        margin-bottom: 200px;
+    }
 }

@@ -14,31 +14,9 @@
 
 @import url("formularios.css");
 
-@import url("responsive.css");
+@import url("dropdown.css");
 
-.menu-usuario {
-    position: relative;
-}
+@import url("perfil.css");
 
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000;
-    width: 150px;
-}
 
-.dropdown-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-}
 
-.dropdown-menu a:hover {
-    background-color: #f0f0f0;
-}

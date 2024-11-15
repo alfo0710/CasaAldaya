@@ -36,6 +36,16 @@
     padding-right: 10px;
 }
 
+#nombreUsuario{
+    font-size: 20px;
+    font-style: italic;
+    
+}
+
+.menu-usuario {
+    position: relative;
+}
+
 @media (max-width: 480px) {
 
     .menu-logo img{
