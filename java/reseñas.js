@@ -1,51 +1,69 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const reviewForm = document.getElementById('reviewForm');
-    const nameInput = document.getElementById('nameInput');
-    const reviewInput = document.getElementById('reviewInput');
-    const reviewList = document.getElementById('reviewList');
+document.addEventListener("DOMContentLoaded", function() {
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewList = document.getElementById("reviewList");
 
-    const loadReviews = () => {
-        const storedReviews = localStorage.getItem('reviews');
-        if (storedReviews) {
-            JSON.parse(storedReviews).forEach(review => addReviewToDOM(review));
-        }
-    };
+    // Cargar reseñas guardadas en Local Storage al cargar la página
+    loadReviews();
 
-    const addReviewToDOM = (review) => {
-        const div = document.createElement('div');
-        div.classList.add('review-item');
-        div.innerHTML = `
-            <h3>${review.name}</h3>
-            <p>${review.text}</p>
-            <div class="stars">${'★'.repeat(review.rating)}</div>
-        `;
-        reviewList.appendChild(div);
-    };
-
-    const saveReview = (review) => {
-        const storedReviews = localStorage.getItem('reviews');
-        const reviews = storedReviews ? JSON.parse(storedReviews) : [];
-        reviews.push(review);
-        localStorage.setItem('reviews', JSON.stringify(reviews));
-    };
-
-    reviewForm.addEventListener('submit', (event) => {
+    // Escuchar el evento de envío del formulario
+    reviewForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        const name = nameInput.value.trim();
-        const review = reviewInput.value.trim();
+        
+        const name = document.getElementById("nameInput").value;
+        const reviewText = document.getElementById("reviewInput").value;
         const rating = document.querySelector('input[name="rating"]:checked')?.value;
-        if (name && review && rating) {
-            const reviewObj = { name, text: review, rating: parseInt(rating) };
-            addReviewToDOM(reviewObj);
-            saveReview(reviewObj);
-            nameInput.value = '';
-            reviewInput.value = '';
-            document.querySelector('input[name="rating"]:checked').checked = false;
+
+        // Validar que todos los campos estén llenos
+        if (!name || !reviewText || !rating) {
+            alert("Por favor, completa todos los campos.");
+            return;
         }
+
+        // Crear un objeto de reseña
+        const review = {
+            name: name,
+            reviewText: reviewText,
+            rating: rating,
+            date: new Date().toLocaleDateString() // Guardar la fecha
+        };
+
+        // Guardar la reseña en Local Storage
+        saveReview(review);
+
+        // Limpiar el formulario
+        reviewForm.reset();
+
+        // Volver a cargar las reseñas para mostrar la nueva
+        loadReviews();
     });
 
-    loadReviews();
+    // Función para guardar la reseña en Local Storage
+    function saveReview(review) {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push(review);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+    }
+
+    // Función para cargar y mostrar las reseñas en la página
+    function loadReviews() {
+        reviewList.innerHTML = ""; // Limpiar la lista de reseñas
+        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+        reviews.forEach(review => {
+            const reviewElement = document.createElement("div");
+            reviewElement.classList.add("review-item");
+            reviewElement.innerHTML = `
+                <h3>${review.name}</h3>
+                <p>${review.reviewText}</p>
+                <p>${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</p>
+                <small>${review.date}</small>
+                <hr>
+            `;
+            reviewList.appendChild(reviewElement);
+        });
+    }
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const iconoUsuario = document.getElementById("iconoUsuario");

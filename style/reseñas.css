@@ -1,20 +1,17 @@
-
-
 .review-container {
-    background-color: #85b28f;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #85bdbf;
+    padding: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
     max-width: 600px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left: 390px;
 }
 
 input[type="text"] {
-    width: calc(45% - 10px);
+    width: calc(97%);
     padding: 8px;
-    margin: 5px;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -33,21 +30,16 @@ button:hover {
     background-color: #3a5e44;
 }
 
-#reviewListContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
 .review-item {
     background-color: #fff;
     color: #333;
     padding: 10px;
     border-radius: 5px;
-    width: 45%;
-    max-width: 500px;
+    width: calc(33.333% - 20px);
+    min-width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    box-sizing: border-box;
     margin: 10px;
 }
 
@@ -57,7 +49,6 @@ button:hover {
     color: #4e7c5b;
 }
 
-/* Star Rating Styles */
 .star-rating {
     direction: rtl;
     display: flex;
@@ -88,34 +79,39 @@ button:hover {
     font-size: 1.3em;
     margin-top: 5px;
 }
+
 #reviewListContainer {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping to a new line when reaching the screen edge */
-    justify-content: flex-start; /* Aligns items to the left */
-    gap: 10px; /* Space between each review item */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
     padding: 10px;
+    padding-bottom: 100px;
+    padding-top: 80px;
 }
 
-.review-item {
-    background-color: #fff;
-    color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    width: calc(33.333% - 20px); /* Set each item to one-third width with a gap adjustment */
-    min-width: 300px; /* Minimum width to maintain readability */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    box-sizing: border-box; /* Ensures padding does not affect width */
-}
-
-.review-item h3 {
-    margin: 0 0 5px;
-    font-size: 1.1em;
-    color: #4e7c5b;
-}
-
-@media (max-width: 600px) {
-    .review-item {
-        width: 100%; /* For smaller screens, each item takes the full width */
+@media (max-width: 480px) {
+    .review-container {
+        max-width: 300px;
+        margin-bottom: 40px;
+        margin-left: 70px;
     }
+
+    input[type="text"] {
+        width: calc(96%);
+    }
+
+    #reviewListContainer {
+        margin-left: 70px;
+    }
+}
+
+@media (min-width: 1368px) {
+    .review-container {
+        max-width: 800px;
+        margin-left:290px;
+        padding: 20px   ;
+    }
+
+
 }
