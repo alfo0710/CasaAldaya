@@ -2,22 +2,22 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     event.preventDefault();
     
     const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;  // Nueva línea para obtener el apellido
     const email = document.getElementById("email").value;
-    const fechaNacimiento = document.getElementById("fechaNacimiento").value;
     const password = document.getElementById("newPassword").value;
     const genero = document.getElementById("genero").value;
 
     const user = {
         nombre: nombre,
+        apellido: apellido,  // Se agrega el apellido al objeto user
         email: email,
-        fechaNacimiento: fechaNacimiento,
         password: password,
         genero: genero
     };
 
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("isLoggedIn", "true");  // Marca el usuario como logueado
-    window.location.href = "index.html";  // Redirige a la página principal
+    window.location.href = "iniciarSesion.html";  // Redirige a la página principal
 });
 
 

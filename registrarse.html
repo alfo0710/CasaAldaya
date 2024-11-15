@@ -15,7 +15,6 @@
             <a id="texto-opciones" href="index.html">Inicio</a>
             <a id="texto-opciones" href="historiaEmpresa.html">Historia</a>
             <a id="texto-opciones" href="reseñasClientes.html">Reseñas</a>
-            <a id="texto-opciones" href="productos.html">Productos</a>
             <div class="menu-usuario">
                 <img src="img/usuario.png" alt="Usuario" id="iconoUsuario" style="cursor: pointer;">
                 <div class="dropdown-menu" id="menuOpciones" style="display: none;">
@@ -28,17 +27,18 @@
     </section>
 
     <div class="contenedorTotal">
-        <div class="auth-section">
+        <div class="auth-section-register">
             <h1>Registrarse</h1>
             <form id="registerForm">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
+                <!-- Sección de Apellido movida aquí -->
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required>
-
-                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
 
                 <label for="newPassword">Contraseña:</label>
                 <input type="password" id="newPassword" name="newPassword" required>
@@ -48,7 +48,7 @@
                 <select id="genero" name="genero" required>
                     <option value="mujer">Mujer</option>
                     <option value="varon">Varón</option>
-                    <option value="ninguno">Ninguno de los dos</option>
+                    <option value="ninguno">No me identifico con ninguno</option>
                 </select>
 
                 <button type="submit">Registrarse</button>
@@ -58,6 +58,18 @@
         </div>
     </div>
 
-    <script src="register.js"></script>
+    <footer class="pieDePagina">
+        <div class="redesSociales">
+            <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="tel:+47223585"><img src="img/telefono.png" alt="Teléfono"></a>
+            <a href="mailto:CasaAldaya@gmail.com"><img src="img/email.png" alt="Email"></a>
+            <a href="tel:+598098833987"><img src="img/whatsapp.png" alt="Whatsapp"></a>
+        </div>
+    
+        <div class="direccion">
+            <p>Av. San Martin 300 ▪️ Paysandú ▪️ Uruguay</p>
+        </div>
+    </footer>
+    <script src="java/registro.js"></script>
 </body>
 </html>
